@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:animateLayoutChanges="true"
+    android:background="@color/colorPrimary"
+    tools:context=".MainActivity">
+
+    <LinearLayout
+        android:id="@+id/layoutHeader"
+        android:layout_width="match_parent"
+        android:layout_height="70dp"
+        android:background="@color/colorPrimaryDark"
+        android:gravity="center_vertical"
+        android:orientation="horizontal"
+        android:padding="8sp"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
+            android:layout_marginEnd="8dp"
+            android:layout_weight="1"
+            android:ellipsize="end"
+            android:maxLines="1"
+            android:text="Tv Shows"
+            android:textColor="@color/colorTextIcons"
+            android:textSize="20sp" />
+
+        <ImageView
+            android:id="@+id/tvShowFavorites"
+            android:layout_width="@dimen/_23sdp"
+            android:layout_height="@dimen/_23sdp"
+            android:contentDescription="@string/app_name"
+            android:layout_marginEnd="8dp"
+            android:layout_marginBottom="2dp"
+            android:src="@drawable/ic_star"
+            app:tint="@android:color/holo_orange_dark" />
+
+        <ImageView
+            android:id="@+id/imageSearch"
+            android:layout_width="42dp"
+            android:layout_height="32dp"
+            android:layout_marginEnd="8dp"
+            android:contentDescription="@string/app_name"
+            android:src="@drawable/ic_search"
+            app:tint="@color/colorTextIcons" />
+
+    </LinearLayout>
+
+
+     <androidx.recyclerview.widget.RecyclerView
+         android:id="@+id/tvShowRecylerView"
+         android:layout_width="match_parent"
+         android:layout_height="0dp"
+         android:clipToPadding="false"
+         android:orientation="vertical"
+         android:padding="8dp"
+         app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+         app:layout_constraintBottom_toBottomOf="parent"
+         app:layout_constraintTop_toBottomOf="@+id/layoutHeader"
+         tools:listitem="@layout/item_container_tvshow" />
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>
